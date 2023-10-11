@@ -1,0 +1,9 @@
+Till 13 v we will see construcor class by default 
+from 14 v onwards we are not seeing constructor by default
+
+16v 
+
+A LifeCycle Hooks -->  total 8 
+ngOninit interface --> till 15 by default 
+from 16 its user choice wither you want it or not 
+

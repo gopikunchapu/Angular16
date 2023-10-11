@@ -1,0 +1,11 @@
+Data Binding :
+                Data binding allows us to communicate between component class and its corresponding view template.
+                Its 2 Types
+                    1. One-Way Data Binding
+                        1. String Interpolation (.ts --> .html)
+                        2. Propety Binding (.ts --> .html)
+                        3. Class Binding (.ts --> .html)
+                        4. Style Binding (.ts --> .html)
+                        5. Event Binding (.html --> .ts)
+
+                    2. Two-Way Data Binding: By using ngModel (.html <--> .ts)

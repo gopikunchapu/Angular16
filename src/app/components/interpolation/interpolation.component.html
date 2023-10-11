@@ -1,0 +1,59 @@
+<h2>Interpolation : </h2>
+
+<!-- We can send data from class file to html file : 
+1. by using property 
+2. By using object
+3. By using Array of obejcts
+4. images also we can send
+5. We can send methods also by using interpolation
+-->
+
+<h1>My Name is : {{name}}</h1>
+<h1>My Name is : {{name.length}}</h1>
+<h1>My Name is : {{name.toUpperCase()}}</h1>
+<h1>My Name is : {{name.toLowerCase()}}</h1>
+
+<h1>My Name from method : {{getMyName()}}</h1>
+
+<h1>My Name is from obj : {{emp.name}}</h1>
+<h1>My age is from obj : {{emp.age}}</h1>
+<h1>My age is from obj : {{emp.age<10}}</h1>
+<h1>My age is from obj : {{emp.age>10}}</h1>
+
+<!-- we can use Expressions -->
+
+<h1>{{2+8+6}}</h1>
+<h1>{{emp.age + 10}}</h1>
+
+<!-- Assignments are not allowed -->
+<!-- 
+<h1>{{x = 20}}</h1>
+<h1>{{x = x + 10}}</h1>
+<h1>{{x++}}</h1> -->
+
+<!--
+    Arrya of objects
+    1. if we want to show object, we have to use piping of with JSON
+    2. if we perticular object then we have to use index based means array of index object[index]
+-->
+<!-- 
+<h1>{{employess | json}}</h1>
+<h1>{{employess[1].name}}</h1> 
+-->
+
+<!-- We can use ternary operator in Interpolation -->
+
+<h1>{{emp.lname ? emp.lname : 'No Last Name is Available'}}</h1>
+
+<!-- We can display images also by using Interpolation 
+        1. Angualr won't access local folder/ files
+            EX:- imgURL = 'C:\Users\Gopi Krishna\OneDrive\Pictures\Saved Pictures\quotation.jpg';
+        2. SO we have to access from assests folder only
+-->
+<img src="{{imgURL}}" alt="NO Image">
+
+
+
+
+
+
