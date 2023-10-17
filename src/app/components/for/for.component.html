@@ -1,0 +1,45 @@
+<h1><u>For Directive</u></h1>
+
+<h2 *ngFor="let x of names">
+    {{x}}
+</h2>
+<hr>
+
+<!-- For index values -->
+<h2 *ngFor="let x of names; index as i">
+   Value : {{x}} -------- > Index : {{i}}
+</h2> 
+<hr>
+
+<!-- For Even Positions -->
+<h2 *ngFor="let x of names; even as e">
+    Value : {{x}} -------- > Even Position : {{e}}
+ </h2> 
+ <hr>
+
+<!-- For Odd Positions -->
+<h2 *ngFor="let x of names; odd as o">
+    Value : {{x}} -------- > Even Position : {{o}}
+ </h2> 
+<hr>
+
+<!-- single Object Iteration -->
+<h2 *ngFor="let x of emp | keyvalue">
+    {{x.key}} ---- > {{x.value}}
+</h2>
+<hr>
+
+<!--Array of Objects Iteration -->
+<h2 *ngFor="let x of emp1">
+    <!-- in x, we have each object. From here we have to iterate each key and value by using one more for loop-->
+    <h2 *ngFor="let y of x | keyvalue">
+        {{y.key}} ----- > {{y.value}}
+    </h2>
+    <hr>
+</h2>
+
+
+
+
+
+

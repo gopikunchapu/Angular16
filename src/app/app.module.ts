@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
 import { AngularMaterialModule } from './modules/angular-material/angular-material.module';
 import { IfComponent } from './components/if/if.component';
 import { SwitchComponent } from './components/switch/switch.component';
+import { ForComponent } from './components/for/for.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { SwitchComponent } from './components/switch/switch.component';
     EBindingComponent,
     TwoWayComponent,
     IfComponent,
-    SwitchComponent
+    SwitchComponent,
+    ForComponent
   ],
   imports: [
     BrowserModule,

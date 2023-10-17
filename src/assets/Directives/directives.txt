@@ -26,3 +26,6 @@ Syntax - *ngIF="check; then tBlock else eBlcok"
 --> While writting ngSwitch, we have to write property binding like [ngSwitch]
 --> We have to write * symbol for only cases i.e, *ngSwitchCase
 --> We wont give value for *ngSwitchDefault
+
+--> *ngFor --> if we want to iterate object, we must use pipe symbol with keyvalues like 
+Syntax --> *ngFor="let x of emp | keyvalue" 
