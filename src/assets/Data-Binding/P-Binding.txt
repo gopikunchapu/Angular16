@@ -1,0 +1,15 @@
+Property Binding (.ts --> .html)
+=================
+
+1.  To set the property of an element in view to a property defined in the component's class.
+
+Property Vs Attribute:
+    1. Attributes and properties are not the same
+    2. Attributes are defined by HTML
+    3. Properties are defined by DOM
+    4. Attribute values can not be change once they are initailized
+    5. Property values can change
+
+
+--> Boolean values are not work properly in interpollation
+--> To over come above problem we have to use property Binding
