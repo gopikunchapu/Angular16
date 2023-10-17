@@ -14,6 +14,7 @@ import { TwoWayComponent } from './components/two-way/two-way.component';
 import { FormsModule } from '@angular/forms';
 import { AngularMaterialModule } from './modules/angular-material/angular-material.module';
 import { IfComponent } from './components/if/if.component';
+import { SwitchComponent } from './components/switch/switch.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { IfComponent } from './components/if/if.component';
     SBindingComponent,
     EBindingComponent,
     TwoWayComponent,
-    IfComponent
+    IfComponent,
+    SwitchComponent
   ],
   imports: [
     BrowserModule,

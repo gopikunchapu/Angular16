@@ -6,8 +6,8 @@ Types :-
         1. Structural Directives :
                                 It will change the appearance of DOM by adding / removing
                                 1. *ngIf --> It will remove the total element from the DOM if the condition is false
-                                2. switch
-                                3. For
+                                2. ngSwitch --> 
+                                3. *ngFor --> If we have list of elements then we can use this
         2. Attribute Directives :
                                 Change the appearance / behavior of an html elements
                                 1. ngClass
@@ -22,3 +22,7 @@ Types :-
 --> <ng-template> use for calling based on condition. By using reference variable we can call this block
 --> IF we have more data and lot of data then we have to use <ng-template> for each one like true block and else block
 Syntax - *ngIF="check; then tBlock else eBlcok"
+
+--> While writting ngSwitch, we have to write property binding like [ngSwitch]
+--> We have to write * symbol for only cases i.e, *ngSwitchCase
+--> We wont give value for *ngSwitchDefault
