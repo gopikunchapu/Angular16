@@ -11,3 +11,6 @@ from 16 its user choice wither you want it or not
 
 ngModel won't work with out import FormModules in angualr module file
 For two way data binding won;t require reference name
+
+--> <ng-template> use for calling based on condition. By using reference variable we can call this block
+--> IF we have more data and lot of data then we have to use <ng-template> for each one 

@@ -1,0 +1,24 @@
+Directives :-
+==============
+            Directives are the classes that add additional behavior to html elements in our angular application.
+Types :-
+======
+        1. Structural Directives :
+                                It will change the appearance of DOM by adding / removing
+                                1. *ngIf --> It will remove the total element from the DOM if the condition is false
+                                2. switch
+                                3. For
+        2. Attribute Directives :
+                                Change the appearance / behavior of an html elements
+                                1. ngClass
+                                2. ngStyle
+        3. Component / Custom Directives :
+                                These are have their own templates
+
+
+
+
+--> * symnbol is not mandatory for Structural Directives
+--> <ng-template> use for calling based on condition. By using reference variable we can call this block
+--> IF we have more data and lot of data then we have to use <ng-template> for each one like true block and else block
+Syntax - *ngIF="check; then tBlock else eBlcok"
