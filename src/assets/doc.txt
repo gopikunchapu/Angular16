@@ -7,3 +7,7 @@ A LifeCycle Hooks -->  total 8
 ngOninit interface --> till 15 by default 
 from 16 its user choice wither you want it or not 
 
+[(ngModel)] -->  Called Banana in the box
+
+ngModel won't work with out import FormModules in angualr module file
+For two way data binding won;t require reference name

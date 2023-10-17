@@ -1,0 +1,19 @@
+<h1><u>Two-Way Data Binding</u></h1>
+<input type="text" #name placeholder="Enter your name">
+<input type="text" #course placeholder="Enter course">
+<input type="text" #fee placeholder="Enter fee">
+
+<!-- <button mat-button color="primary">My Name</button>
+<button mat-flat-button color="primary">My Name</button> -->
+<br>
+<button mat-raised-button color="primary" (click)="onClick1(name.value)">My Name</button>
+<button mat-raised-button color="primary" (click)="onClick2(course.value)">My Course</button>
+<button mat-raised-button color="primary" (click)="onClick3(fee.value)">My Fee</button>
+<br>
+<h2>{{"My Name : "+ myName}}</h2>
+<h2>{{"My Course : "+ myCourse}}</h2>
+<h2>{{"My Fee : "+ myFee}}</h2>
+
+<hr>
+<input type="text" [(ngModel)]="myText">
+<h2>{{'My Entered text is : ' + myText}}</h2>
