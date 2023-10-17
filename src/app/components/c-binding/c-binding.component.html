@@ -1,0 +1,18 @@
+<h2>Class Binding</h2><hr>
+
+<p class="textColor">Regular Class</p>
+<p class="textSize">Regular Class</p>
+
+
+<p [class]="myText">Class Binding</p>
+
+<p class="textColor textSize">Regular Multiple Classes</p>
+<p [class]="myGroup">Multiple Class Binding with Group</p>
+<!--Instead of using above line for multiple class/group then we have to use ngClass like below-->
+<p [ngClass]="myGroup"> Multiple Class Binding with Group with ngClass</p>
+
+<p [class]="isRequired ? 'textColor' : 'textSize'">Class Binding with Ternary Operator</p>
+
+<p [class.textSize]="isRequired">Class Binding with dot (.) Operator</p>
+
+
