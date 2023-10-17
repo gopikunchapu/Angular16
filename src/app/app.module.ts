@@ -8,6 +8,7 @@ import { HomeComponent } from './components/home/home.component';
 import { InterpolationComponent } from './components/interpolation/interpolation.component';
 import { PBindingComponent } from './components/p-binding/p-binding.component';
 import { CBindingComponent } from './components/c-binding/c-binding.component';
+import { SBindingComponent } from './components/s-binding/s-binding.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { CBindingComponent } from './components/c-binding/c-binding.component';
     HomeComponent,
     InterpolationComponent,
     PBindingComponent,
-    CBindingComponent
+    CBindingComponent,
+    SBindingComponent
   ],
   imports: [
     BrowserModule,
