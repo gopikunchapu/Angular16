@@ -1,0 +1,13 @@
+Mouse : Click
+        double Click
+        mouse over
+        mouse out
+        mouse move
+
+KeyBoard :  Key down
+            key up
+            key press
+
+Input Events :  focus / focusin
+                blur / focusout
+
