@@ -4,6 +4,8 @@ import { IfComponent } from './components/if/if.component';
 import { InterpolationComponent } from './components/interpolation/interpolation.component';
 import { HomeComponent } from './components/home/home.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { CourseNameComponent } from './components/course-name/course-name.component';
+import { CourseDetailsComponent } from './components/course-details/course-details.component';
 
 const routes: Routes = [
   {
@@ -22,6 +24,14 @@ const routes: Routes = [
   {
     path: 'interpolation',
     component: InterpolationComponent
+  },
+  {
+    path: 'courseName',
+    component: CourseNameComponent
+  },
+  {
+    path: 'courseDetails',
+    component: CourseDetailsComponent
   },
   {
     path: '**', // IT will check given url path above of this line, if not match it will open page not found Means Wild Card Entry. it won't check after this even those if you mentioned any path after this path and it should be last route entry only

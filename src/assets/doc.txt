@@ -14,3 +14,10 @@ For two way data binding won;t require reference name
 
 --> <ng-template> use for calling based on condition. By using reference variable we can call this block
 --> IF we have more data and lot of data then we have to use <ng-template> for each one 
+
+Priciples :-
+----------
+--> DRY - Do-not Repeat Yourself
+--> Data should resides at one place
+--> Hard coded data shoud not place in component class file. 
+--> For reusability code we have to use Dependency Injuction design pattren by using services
