@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CourseService } from 'src/app/services/course.service';
 
 @Component({
   selector: 'app-course-name',
@@ -7,10 +8,9 @@ import { Component } from '@angular/core';
 })
 export class CourseNameComponent {
 
-  public courses = [
-    {id: 1, name: 'Angular', fee: 1500},
-    {id: 2, name: 'Angular Material', fee: 1000},
-    {id: 3, name: 'Bootstrap', fee: 500}
-  ];
+  public courses = [];
+  constructor(private _courseService : CourseService) {// Here we created instance property for that service. So that by using this instance we call every thing which is in service class
+    this.courses = this._courseService.getCourseInfo();
+  }
 
 }

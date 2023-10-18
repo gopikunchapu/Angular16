@@ -16,8 +16,36 @@ For two way data binding won;t require reference name
 --> IF we have more data and lot of data then we have to use <ng-template> for each one 
 
 Priciples :-
-----------
---> DRY - Do-not Repeat Yourself
---> Data should resides at one place
---> Hard coded data shoud not place in component class file. 
---> For reusability code we have to use Dependency Injuction design pattren by using services
+==========
+    --> DRY - Do-not Repeat Yourself
+    --> Data should resides at one place
+    --> Hard coded data shoud not place in component class file. 
+    --> For reusability code we have to use Dependency Injuction design pattren by using services
+
+SERVICES :-
+=========
+    --> Services are used to send the data to all components means serves
+    --> Till Angular 14v, after creating service file, we have to register service class name in root module file like below
+            providers: [CourseService], in app.module.ts file
+    --> So that every component will use this service
+    --> But not required to mentioned like above because by default it is root like below
+            @Injectable({
+            providedIn: 'root'
+            })
+    --> But traditional formate is registering the all in root module only
+    --> @Injectable means we have to inject this service class to use these service class methods/properties in constructor
+    --> Till Angular 15v, if we create any component we can see Constructor by default.
+    --> BUt from V16 onwords we are not getting. So that when ever it is required then only we have to write
+    --> If property is declared with private then we can use/access that property with-in the class only
+            Exampler:- private _propertyName; --> Use of Underscore is to identify the easily what type of that property is either public or private
+    --> If property is declared with public then we can use this property outside of the class also.
+    --> In Services also we can not provide raw / static data. The data must be reside some where else like in DB
+            Example for Service should not having raw data like below
+            getCourseInfo() {
+                return [
+                {id: 1, name: 'Angular', fee: 1500},
+                {id: 2, name: 'Angular Material', fee: 1000},
+                {id: 3, name: 'Bootstrap', fee: 500}
+                ];
+            }
+    

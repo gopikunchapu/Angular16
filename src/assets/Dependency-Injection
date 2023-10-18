@@ -1,0 +1,182 @@
+Dependency Injuction :-
+=====================
+Here, we have to check 3 steps :
+1. Without DI
+2. DI as Design Pattern
+3. DI as Framework (Provided by Angular)
+
+    1. Without DI :
+    --------------
+        Let us consider the following code. That doesn't have DI
+
+        class Engine {
+            Constructor() {}
+        }
+
+        class Tires {
+            Constructor() {}
+        }
+
+        class Car {
+            engine; //property
+            tires; //property
+
+            Constructor() {
+                //Creating Instance means creating object
+                this.engine = new Engine(); // Assigning value to engine property by creating Engine class object
+                this.tires = new Tires(); //Assigning value to tires property by creating Tires class object 
+            }
+        }
+
+        Here we are constructing Car
+        First execute method is Constructor in class because to initalize the class properties.
+
+        See, there is no problem in the above code. The code will execute properly. But the problem here is,
+        There is no values in Engine Constructor --> Means Empty constructor
+        In Tires also no values --> Means Empty constructor
+        So that we have created instance with Empty constructor in Car Class
+
+        THE PROBLEM IS ...
+        ------------------
+        class Engine {
+            constructor(new_parameter) {} // Here new_parameter is Either Petrol or Diesel
+        }
+
+        In future, one/multy new parameter came to engine class for type of engine
+        Now this Engine class is expected one parameterized constructor instance while creating Car class constructor. so that below empty constructor code won't work for this condition.
+
+        class Car {
+            engine; //property
+            tires; //property
+
+            Constructor() {
+                //Creating Instance means creating object
+                this.engine = new Engine(); // Assigning value to engine property by creating Engine class object
+                this.tires = new Tires(); //Assigning value to tires property by creating Tires class object 
+            }
+        }
+
+        S0 that, we have to change/update our Car class instance of Engine with parameterized constructor like below
+        In this case, in car class we need to change the constructor as follows.
+        class Car {
+            engine; //property
+            tires; //property
+
+            Constructor() {
+                //Creating Instance means creating object
+                this.engine = new Engine(Petrol); // Assigning value to engine property by creating Engine class object
+                this.tires = new Tires(); //Assigning value to tires property by creating Tires class object 
+            }
+        }
+
+        --> i.e., Our code is not flexible.Means dependencies will change at any time --> Car class need to change as well
+
+        --> In future, tires class also accepts one/more arguments (either new tires or old tires, etc ) then above code won't work once again.--> Car class need to change once again as well
+
+        This means here the Car class depending on two things. They are Engine class and Tires class
+
+        We have to check each time for Engine Class and tires class updates like is there any update/change happened or not?
+
+    2. DI as a DESIGN PATTERN :
+    ---------------------------
+        DI is a coding pattern in which a class receives its dependencies from external source rather than creating them itself.
+
+        Without DI
+        -----------
+        class Car {
+            engine;
+            tires;
+
+            Constructor() {
+                this.engine = new Engine(Petrol);
+                this.tires = new Tires();
+            }
+        }
+
+        Here the problem is we are creating dependencies object inside Car class constructor.
+
+        The solution is we have to create out side of the Car class. And we can use those objects inside Car class constructor like below code
+
+        With DI
+        --------
+        class Car {
+            engine;
+            tires;
+            constructor(engine, tires) { // Here the engine is anything either perameter or not. We dont bother about this one. jsut we can use that and assign
+                this.engine = engine;
+                this.tires = tires;
+            }
+        }
+
+        Here Car class doesn't create any dependencies. It just uses them. The creation of those dependencies is external to this class.
+
+        --> Now to create a Car, we are going to have the code somthing as follows
+        --> var myEngine = new Engine();
+            var myTires = new Tires();
+            var myCar = new Car(myEngine, myTires);
+
+        --> var myEngine = new Engine(new_parameter);
+            var myTires = new Tires();
+            var myCar = new Car(myEngine, myTires);
+
+        --> var myEngine = new Engine();
+            var myTires = new Tires(new_parameter);
+            var myCar = new Car(myEngine, myTires);
+
+
+        Problem Solved ? NO --> ANOTHER PROBLEM EXIST!
+
+        --> In the above example, Car has only two dependencies (Engine and Tires). Suppose Car has 10 or 20 or 40 or .....Dependencies, the above type of code is USELESS.
+
+        --> var myEngine = new Engine();
+            var myTires = new Tires();
+            var depA = new DependencyA();
+            var depB = new DependencyB();
+            var depC = new DependencyC();
+            var depZ = new DependencyZ();
+
+            var myCar = new Car(myEngine, myTires, depA, depB, depC, depZ);
+
+        Here the car is depending on multiple dependencies, in this situation as a developer we have to check and pass each dependency to car constructor.
+        Suppose we have 70 dependencies, then we have to write/pass 70 dependency objects to Car constructor
+
+        --> var myEngine = new Engine();
+            var myTires = new Tires();
+            var depA = new DependencyA();
+            var depB = new DependencyB(depA);
+            var depAB = new DependencyAB(depB);
+            var depZ = new DependencyZ(depAB);
+
+            var myCar = new Car(myEngine, myTires, depA, depB, depAB, depZ);
+
+        In the above code, one dependency is depending on another dependency.  Means first we have to create depA depency object then we have to create depB object for DependencyB class
+        So that, we have to check each dependency like is there any interdependency or not for creating one object for dependency class
+
+        --> In this case it becomes extreme difficulty for the developer.
+        --> Here, Angular DI as Framework comes into picture.
+
+    3. DI AS A FRAMEWORK :
+    ----------------------
+        Example :- If we want construct a house, we have to search thapi mastery and for plumbing work we have to search for plumber and next for electoricty work have to search electrician. --> This is for one person
+
+        For another person, do the same thing for his/her house construction. Means every one depending on same service
+
+        Because of this Govt desided to place all these services in a single place so that every one will go directly to this place and use them.
+
+        So that all services are provided at single place is called Registering.
+
+
+        Injector :-->
+
+            Engine ----> Service A
+            Tires -----> Service B
+            DepA ------> Service C
+            -----
+            ----
+            ----
+            DepZ ------> Service Z
+
+        Injector has to register all dependencies. That means injector is like a CONTAINER for all dependencies.
+
+
+
