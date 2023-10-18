@@ -1,0 +1,38 @@
+
+Components Communication :-
+========================
+    From Parent To Child
+    --------------------
+        1. Parent to Child we have to delcare one variable in ts file
+            public pData = "This data is coming from Parent";
+        2. IF we want to send this pData property value to child then we have to declare child selctor in parent html file
+            <app-child></app-child>
+        3. By using one postMan/ one property binding we will send pData value to child means assigning pData to that postman property
+            <app-child [pPostMan]="pData"></app-child>
+        4. Now, we will declare this pPostMan property in child componet by using @Input() means This postMan having one value and this value is Input/receving to the child component
+            @Input() public pPostMan;
+        5. Now we can use pPostMan property in child html to show pData in child component
+            <h3>{{pPostMan}}</h3>
+
+    From Child To Parent
+    ---------------------
+        1. If we want to send the data from child to Parent, we have to use event method. i.e, one button clicking we will send/emit the data from child component
+            <button mat-raised-button color="warn" (click)="onClick()">Click this to send data to Parent</button>
+        2. we have to impliment onClick() in child ts file.
+            onClick() {
+            }
+        3. First we have to declare one property/varible with @Output() with EventEmitter() becuae we want to send/emit this property value to another component where ever they have used this component selector name
+            @Output() public cData = new EventEmitter();
+        4. now. in click method we have to emit the message or values 
+            onClick() {
+                this.cData.emit("This is Child Data");
+            }
+        5. this emitted property values getitng based on event so that we will declare same child property name in child selector where ever we have declare it in parent
+            <app-child (cData)="$event" [pPostMan]="pData"></app-child>
+        6. And the value is in or captured by $event. thats why we have to declared the cData value with $event.
+        7. now we have child emit data in $event, so we have to use this in parent ts / html file by declaring one variable/property as dataFromChild
+            public dataFromChild = '';
+        8. Assign $event value to dataFromChild property 
+            <app-child (cData)="dataFromChild = $event" [pPostMan]="pData"></app-child>
+        9. Print the Child emitted data in parent html file
+            <h3>Child Data : {{dataFromChild}}</h3>

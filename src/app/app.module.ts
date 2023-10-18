@@ -16,6 +16,8 @@ import { AngularMaterialModule } from './modules/angular-material/angular-materi
 import { IfComponent } from './components/if/if.component';
 import { SwitchComponent } from './components/switch/switch.component';
 import { ForComponent } from './components/for/for.component';
+import { ParentComponent } from './components/parent/parent.component';
+import { ChildComponent } from './components/child/child.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { ForComponent } from './components/for/for.component';
     TwoWayComponent,
     IfComponent,
     SwitchComponent,
-    ForComponent
+    ForComponent,
+    ParentComponent,
+    ChildComponent
   ],
   imports: [
     BrowserModule,
