@@ -3,5 +3,5 @@ Calling a new component in html file will happens in 3 ways:
         Ex:- <app-home></app-home>
     2. As a class value for any html element and make selector as a class type by providing dot(.) symbol infornt of selector name in .ts file i.e, selector: '.app-home'
         Ex:- <div class="app-home"></div>
-    3. As a attribute for any html element and make selector to selector: '[app-home]'
+    3. As a attribute for any html element and make selector value inside [] i.e, selector: '[app-home]'
         Ex:- <div app-home></div>
