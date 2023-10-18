@@ -9,9 +9,14 @@ import { CourseService } from 'src/app/services/course.service';
 export class CourseDetailsComponent {
   
   public courses = [];
+  public errMsg = '';
+  
   constructor(private _courseService : CourseService) {
     this._courseService.getCourseInfo().subscribe(res => {
       this.courses = res;
+    },
+    err => {
+      this.errMsg = err;
     });
   }
 

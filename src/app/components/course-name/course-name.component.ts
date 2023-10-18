@@ -9,9 +9,14 @@ import { CourseService } from 'src/app/services/course.service';
 export class CourseNameComponent {
 
   public courses = [];
+  public errMsg = '';
+  
   constructor(private _courseService : CourseService) {// Here we created instance property for that service. So that by using this instance we call every thing which is in service class
     this._courseService.getCourseInfo().subscribe(res => {
       this.courses = res;
+    },
+    err => {
+      this.errMsg = err;
     });
   }
 
