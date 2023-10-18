@@ -64,3 +64,19 @@ SERVICES :-
     
     --> If we want use HTTP events we have to use HTTPClient class and it is in HTTPCleintModule.
     --> We have register HttpClientModule in imports array in-side of app.module.ts file
+
+ROUTING
+========
+    --> If we want to navigate from one component to another component through code, we have to use navigate method which is inside of Router class
+    --> So that we have to create instance of router in constructor like below
+        Ex:- private _router : Router
+    --> In Router we have lot of methods among them for routing purpose we will use two methods 
+        1. navigate() --> for this it will construct url from existing url --> this._router.navigate(['/selectedItem']);
+            ex:- url looks like --> http://localhost:4200/selectedItem/1
+        2. navigateByUrl() --> For this we have to use total/entire url path
+    --> If we want to capture constructed url values and used in components by using ActivatedRoute class
+        Ex:- this._activatedRoute.snapshot.paramMap.get('id'); //Here id is should be path of selectedItem/:id it will change based on provided parameter
+
+
+
+

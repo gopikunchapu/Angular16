@@ -23,6 +23,7 @@ import { CourseNameComponent } from './components/course-name/course-name.compon
 import { CourseDetailsComponent } from './components/course-details/course-details.component';
 import { CourseService } from './services/course.service';
 import { HttpClientModule } from '@angular/common/http';
+import { SelectedItemComponent } from './components/selected-item/selected-item.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { HttpClientModule } from '@angular/common/http';
     ChildComponent,
     PageNotFoundComponent,
     CourseNameComponent,
-    CourseDetailsComponent
+    CourseDetailsComponent,
+    SelectedItemComponent
   ],
   imports: [
     BrowserModule,

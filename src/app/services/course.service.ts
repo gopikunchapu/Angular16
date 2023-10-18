@@ -7,7 +7,7 @@ import { Observable, catchError, throwError } from 'rxjs';
 })
 export class CourseService {
 
-  private _url = '../../assets/data/courseData123.json';
+  private _url = '../../assets/data/courseData.json';
 
   constructor(private _http : HttpClient) { }
 

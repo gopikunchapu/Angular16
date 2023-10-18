@@ -1,5 +1,5 @@
 <h2>Couse Details : </h2>
-<h3 *ngFor="let course of courses">
+<h3 *ngFor="let course of courses" (click)="onSelect(course)">
     {{course.id}} --- {{course.name}} --- {{course.fee}}
 </h3>
 <h5>Error : {{errMsg}}</h5>
