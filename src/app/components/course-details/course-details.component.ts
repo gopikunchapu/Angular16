@@ -10,7 +10,9 @@ export class CourseDetailsComponent {
   
   public courses = [];
   constructor(private _courseService : CourseService) {
-    this.courses = this._courseService.getCourseInfo();
+    this._courseService.getCourseInfo().subscribe(res => {
+      this.courses = res;
+    });
   }
 
 }

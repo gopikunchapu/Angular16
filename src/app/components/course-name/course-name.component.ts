@@ -10,7 +10,9 @@ export class CourseNameComponent {
 
   public courses = [];
   constructor(private _courseService : CourseService) {// Here we created instance property for that service. So that by using this instance we call every thing which is in service class
-    this.courses = this._courseService.getCourseInfo();
+    this._courseService.getCourseInfo().subscribe(res => {
+      this.courses = res;
+    });
   }
 
 }

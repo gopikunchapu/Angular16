@@ -48,4 +48,19 @@ SERVICES :-
                 {id: 3, name: 'Bootstrap', fee: 500}
                 ];
             }
+    --> Service must be send HTTP Request like GET, Post, etc to get the data from DB by server as response
+        Ex:- Course Name/Course Details  / etc component <--> Service <--> HTTP (GET, POST and etc) <--> Server Request / Server Response <--> DataBase 
+    --> Here the response data is getting by server to service is called Observable
+    --> By doing Subscribe the observable response in component from service
+
+    OBSERVABLES :
+    -------------
+        --> An Observable is a sequence of items that arrive asynchronously overtime
+        --> HTTP calls(request)<-->Single item <--> HTTP Response
+        --> In Angular, an observable is HTTP response which arrives asynchronously
+        --> But, that incomming HTTP response(observable) is not ready to use in our application
+        --> So, after receiving the observable we need to convert the incoming response into an ARRAY
+        --> After conversion into an ARRAY only it is ready to use in our application
     
+    --> If we want use HTTP events we have to use HTTPClient class and it is in HTTPCleintModule.
+    --> We have register HttpClientModule in imports array in-side of app.module.ts file
